@@ -36,7 +36,7 @@ class DataIngestion:
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path),exist_ok=True)
             df.to_csv(self.ingestion_config.raw_data_path,index=False)
 
-            
+            df=df.drop(labels=['fnlwgt', 'education'],axis=1)
             df['workclass']=df['workclass'].str.replace('?', 'Private')
             df['occupation'] = df['occupation'].str.replace('?', 'Prof-specialty')
             df['native-country'] = df['native-country'].str.replace('?', 'United-States')

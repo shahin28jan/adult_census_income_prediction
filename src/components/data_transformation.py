@@ -24,20 +24,17 @@ class DataTransformation:
         try:
             logging.info('Data Transformation initiated')
             # Define which columns should be ordinal-encoded and which should be scaled
-            categorical_cols = ['workclass', 'education', 'marital_status', 'occupation','relationship', 'race', 'gender', 'native_country']
-            numerical_cols = ['age', 'fnlwgt', 'education_num', 'capital_gain', 'capital_loss','hours_per_week']
+            categorical_cols = ['workclass', 'marital_status', 'occupation','relationship', 'race', 'gender', 'native_country']
+            numerical_cols = ['age', 'education_num', 'capital_gain', 'capital_loss','hours_per_week']
             
             # Define the custom ranking for each ordinal variable
             workclass = [' State-gov', ' Self-emp-not-inc', ' Private', ' Federal-gov', ' Local-gov', ' Self-emp-inc', ' Without-pay', ' Never-worked']
-            education = [' Bachelors', ' HS-grad', ' 11th', ' Masters', ' 9th', ' Assoc-acdm', ' Assoc-voc', ' Some-college', ' 7th-8th', ' Prof-school', ' 12th', ' Doctorate', ' 5th-6th', ' 10th', ' 1st-4th', ' Preschool', ' 12th']
             marital_status = [' Never-married', ' Married-civ-spouse', ' Divorced', ' Married-spouse-absent', ' Separated', ' Married-AF-spouse', ' Widowed']
             occupation = [' Adm-clerical', ' Exec-managerial', ' Handlers-cleaners', ' Prof-specialty', ' Other-service', ' Craft-repair', ' Sales', ' Transport-moving', ' Farming-fishing', ' Machine-op-inspct', ' Tech-support', ' Protective-serv', ' Armed-Forces', ' Priv-house-serv']
             relationship = [' Not-in-family', ' Husband', ' Wife', ' Own-child', ' Unmarried', ' Other-relative']
             race = [' White', ' Black', ' Asian-Pac-Islander', ' Amer-Indian-Eskimo', ' Other']
             gender = [' Male', ' Female']
-            native_country = [' United-States',' Mexico',' Philippines',' Germany',' Canada',' Puerto-Rico',' El-Salvador',' India',' Cuba',' England',' Jamaica',' South',' China',' Italy',
-                  ' Dominican-Republic',' Vietnam',' Guatemala',' Japan',' Poland',' Columbia',' Taiwan',' Haiti',' Iran',' Portugal',' Nicaragua',' Hungary',' Honduras',' Scotland',
-                  ' Holand-Netherlands',' Ecuador',' Greece',' Hong',' Ireland',' Laos',' Thailand',' Trinadad&tobago',' Yugoslavia',' Outlying-US(Guam-USVI-etc)', ' France', ' Cambodia', ' Trinadad&Tobago', ' Peru']
+            native_country = [' United-States',' Mexico',' Philippines',' Germany',' Canada',' Puerto-Rico',' El-Salvador',' India',' Cuba',' England',' Jamaica',' South',' China',' Italy',' Dominican-Republic',' Vietnam',' Guatemala',' Japan',' Poland',' Columbia',' Taiwan',' Haiti',' Iran',' Portugal',' Nicaragua',' Hungary',' Honduras',' Scotland',' Holand-Netherlands',' Ecuador',' Greece',' Hong',' Ireland',' Laos',' Thailand',' Trinadad&tobago',' Yugoslavia',' Outlying-US(Guam-USVI-etc)', ' France', ' Cambodia', ' Trinadad&Tobago', ' Peru']
 
             
             logging.info('Pipeline Initiated')
@@ -56,7 +53,7 @@ class DataTransformation:
             cat_pipeline=Pipeline(
                 steps=[
                 ('imputer',SimpleImputer(strategy='most_frequent')),
-                ('ordinalencoder',OrdinalEncoder(categories=[workclass, education, marital_status, occupation, relationship, race, gender, native_country])),
+                ('ordinalencoder',OrdinalEncoder(categories=[workclass, marital_status, occupation, relationship, race, gender, native_country])),
                 ('scaler',StandardScaler())
                 ]
 
