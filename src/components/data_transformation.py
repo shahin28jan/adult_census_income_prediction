@@ -53,7 +53,7 @@ class DataTransformation:
             cat_pipeline=Pipeline(
                 steps=[
                 ('imputer',SimpleImputer(strategy='most_frequent')),
-                ('ordinalencoder',OrdinalEncoder(categories=[workclass, marital_status, occupation, relationship, race, gender, native_country])),
+                ('ordinalencoder',OrdinalEncoder(categories=[workclass, marital_status, occupation, relationship, race, gender, native_country],handle_unknown='error')),
                 ('scaler',StandardScaler())
                 ]
 

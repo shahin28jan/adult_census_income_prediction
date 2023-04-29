@@ -19,6 +19,7 @@ class PredictPipeline:
             model=load_object(model_path)
 
             data_scaled=preprocessor.transform(features)
+            
 
             pred=model.predict(data_scaled)
             return pred
@@ -44,7 +45,7 @@ class CustomData:
                  native_country:str):
         
         self.age=age
-        self.workclass= workclass
+        self.workclass=workclass
         self.education_num=education_num
         self.marital_status=marital_status
         self.occupation=occupation
@@ -76,11 +77,10 @@ class CustomData:
 
 
             }
-
-
             df = pd.DataFrame(custom_data_input_dict)
             logging.info('Dataframe Gathered')
             return df
+            
         except Exception as e:
             logging.info('Exception Occured in prediction pipeline')
             raise CustomException(e,sys)
