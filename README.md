@@ -8,3 +8,9 @@ The Census Income dataset has many entries. Each entry contains the following in
 about an individual: 
 age, workclass, fnlwgt, education, education_num, marital-status, occupation, relationship,
 race, gender, capital-gain,	capital-loss, hours-per-week, native-country, income-per-anum
+
+I apply Random Forest, Decision Tree and Logistic Regression algorithm.
+
+Best Model For this data is: Random Forest.
+
+I got accuracy Score : 0.835461972155103
