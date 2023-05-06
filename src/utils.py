@@ -3,7 +3,8 @@ import sys
 import pickle
 import numpy as np 
 import pandas as pd
-from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+from sklearn.metrics import accuracy_score,confusion_matrix
+from sklearn.metrics import mean_absolute_error, mean_squared_error
 
 from src.exception import CustomException
 from src.logger import logging
@@ -33,13 +34,14 @@ def evaluate_model(X_train,y_train,X_test,y_test,models):
             # Predict Testing data
             y_test_pred =model.predict(X_test)
 
-            # Get R2 scores for train and test data
-            #train_model_score = r2_score(ytrain,y_train_pred)
-            test_model_score = r2_score(y_test,y_test_pred)
+            # Get accuracy scores for train and test data
+           
+            test_model_score = accuracy_score(y_test,y_test_pred)
 
             report[list(models.keys())[i]] =  test_model_score
 
         return report
+      
 
     except Exception as e:
         logging.info('Exception occured during model training')

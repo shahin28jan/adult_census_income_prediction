@@ -37,9 +37,12 @@ def predict_datapoint():
         predict_pipeline=PredictPipeline()
         pred=predict_pipeline.predict(final_new_data)
 
-        results=round(pred[0],2)
+        result=pred
+        if result == 0:
+            return render_template("result.html",final_result = "your Income is Less than equal to 50K: {}".format(result))
+        elif result == 1:
+            return render_template("result.html",final_result = "your Income is more than equal to 50K: {}".format(result))
 
-        return render_template('result.html',final_result = results)
 
 
 

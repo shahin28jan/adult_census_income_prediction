@@ -28,7 +28,7 @@ class DataIngestion:
         logging.info("Data Ingestion methods Starts")
         try:
             df=pd.read_csv(os.path.join('notebook/data/census.csv'))
-            df = pd.read_csv("notebook\data\census.csv", names = ["age",	"workclass", "fnlwgt",	"education", "education_num", "marital-status",	"occupation", "relationship", "race","gender", "capital-gain",	"capital-loss", "hours-per-week", "native-country",	"income-per-anum"])
+            df = pd.read_csv("notebook\data\census.csv", names = ["age","workclass", "fnlwgt",	"education", "education_num", "marital-status",	"occupation", "relationship", "race","gender", "capital-gain",	"capital-loss", "hours-per-week", "native-country",	"income-per-anum"])
 
             logging.info('Dataset read as pandas Dataframe')
 
@@ -63,9 +63,3 @@ class DataIngestion:
             logging.info('Exception occured at Data Ingestion stage')   
             raise CustomException(e,sys)
 
-if __name__=='__main__':
-    obj=DataIngestion()
-    train_data_path,test_data_path=obj.initiate_data_ingestion()
-    data_transformation = DataTransformation()
-    train_arr,test_arr,_= data_transformation.initaite_data_transformation(train_data_path,test_data_path)
-   

@@ -39,7 +39,7 @@ class DataTransformation:
             gender = [' Male', ' Female']
             native_country = [' United-States',' Mexico',' Philippines',' Germany',' Canada',' Puerto-Rico',' El-Salvador',' India',' Cuba',' England',' Jamaica',' South',' China',' Italy',' Dominican-Republic',' Vietnam',' Guatemala',' Japan',' Poland',' Columbia',' Taiwan',' Haiti',' Iran',' Portugal',' Nicaragua',' Hungary',' Honduras',' Scotland',' Holand-Netherlands',' Ecuador',' Greece',' Hong',' Ireland',' Laos',' Thailand',' Trinadad&tobago',' Yugoslavia',' Outlying-US(Guam-USVI-etc)', ' France', ' Cambodia', ' Trinadad&Tobago', ' Peru']
 
-            
+              
             logging.info('Pipeline Initiated')
 
             ## Numerical Pipeline
