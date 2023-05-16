@@ -39,9 +39,9 @@ def predict_datapoint():
 
         result=pred
         if result == 0:
-            return render_template("result.html",final_result = "your Income is Less than equal to 50K: {}".format(result))
+            return render_template("result.html",final_result = "your Income is Less than equal to 50K")#: {}".format(result))
         elif result == 1:
-            return render_template("result.html",final_result = "your Income is more than equal to 50K: {}".format(result))
+            return render_template("result.html",final_result = "your Income is more than equal to 50K")#: {}".format(result))
 
 
 
