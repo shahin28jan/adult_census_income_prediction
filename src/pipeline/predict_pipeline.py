@@ -33,7 +33,7 @@ class CustomData:
     def __init__(self,
                  age:float,
                  workclass:str,
-                 education_num:float,
+                 education:str,
                  marital_status:str,
                  occupation:str,
                  relationship:str,
@@ -46,7 +46,7 @@ class CustomData:
         
         self.age=age
         self.workclass=workclass
-        self.education_num=education_num
+        self.education=education
         self.marital_status=marital_status
         self.occupation=occupation
         self.relationship=relationship
@@ -64,7 +64,7 @@ class CustomData:
             custom_data_input_dict = {
                 'age':[self.age],
                 'workclass':[self.workclass],
-                'education_num':[self.education_num],
+                'education':[self.education],
                 'marital_status':[self.marital_status],
                 'occupation':[self.occupation],
                 'relationship':[self.relationship],

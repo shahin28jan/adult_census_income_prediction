@@ -22,7 +22,7 @@ def predict_datapoint():
         data=CustomData(
             age = float(request.form.get('age')),
             workclass = request.form.get('workclass'),
-            education_num = float(request.form.get('education_num')),
+            education = request.form.get('education'),
             marital_status = request.form.get('marital_status'),
             occupation = request.form.get('occupation'),
             relationship = request.form.get('relationship'),
