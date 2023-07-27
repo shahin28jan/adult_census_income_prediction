@@ -14,3 +14,7 @@ I apply Random Forest, Decision Tree and Logistic Regression algorithm.
 Best Model For this data is: Random Forest.
 
 I got accuracy Score : 0.835461972155103
+
+Deployment Link:
+
+http://adultcensusincomeprediction-env.eba-cvuy383y.eu-north-1.elasticbeanstalk.com/predict
